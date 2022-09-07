@@ -20,12 +20,14 @@ services:
   #     app-network:
 
   backend:
-    build:
-      context: docker/php
-      dockerfile: Dockerfile
     container_name: backend
+    build:
+      context: .docker/php
+      dockerfile: Dockerfile
+    ports:
+      - "1027:8000"
     volumes:
       - ./:/var/www
-      - /docker/php/php.ini:/usr/local/etc/php/conf.d/local.ini
+      - .docker/php/php.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       app-network:
