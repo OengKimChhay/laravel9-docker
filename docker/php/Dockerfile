@@ -27,8 +27,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-COPY .docker/nginx/nginx.conf /etc/nginx/nginx.conf
-
 # Setup working directory
 WORKDIR /var/www/
 
