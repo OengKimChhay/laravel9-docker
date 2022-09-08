@@ -26,6 +26,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "1027:8000"
+    command: php artisan --host=0.0.0.0 serve
     volumes:
       - ./:/var/www
       - .docker/php/php.ini:/usr/local/etc/php/conf.d/local.ini
