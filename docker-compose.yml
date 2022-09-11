@@ -13,7 +13,7 @@ services:
     image: nginx:1.21.6-alpine
     container_name: nginx
     ports:
-      - "8080:80" # port 80 is a port of nginx running in ./service-config/nginx/default.conf and 8080 is port we want to run in host machine
+      - "80:80" # port 80 is a port of nginx running in ./service-config/nginx/default.conf and 8080 is port we want to run in host machine
     volumes:
       - ./:/var/www/html
       - ./service-config/nginx/default.conf:/etc/nginx/conf.d/default.conf
