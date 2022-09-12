@@ -52,12 +52,12 @@ services:
       context: ./service-config/docker
       dockerfile: Dockerfile
     container_name: app
-    # environment: 
-    #   DB_HOST: mysql
-    #   DB_PORT: 4306
-    #   DB_DATABASE: test_database
-    #   DB_USERNAME: mysql_user
-    #   DB_PASSWORD: secret
+    environment: 
+      DB_HOST: mysql
+      DB_PORT: 4306
+      DB_DATABASE: test_database
+      DB_USERNAME: mysql_user
+      DB_PASSWORD: secret
     ports:
       - "1027:9000"
     volumes:
