@@ -42,6 +42,6 @@ COPY --chown=${USER}:${GROUP} . .
 # Setup working directory
 WORKDIR /var/www/html
 
-EXPOSE 9000
+EXPOSE 8000
 
 CMD ["php-fpm"]

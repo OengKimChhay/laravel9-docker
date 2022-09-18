@@ -6,7 +6,7 @@ networks:
 # volumes:
 #   laravel:
 
-services: 
+services:
 
   # =========================== nginx service ============================
   # nginx:
@@ -33,9 +33,9 @@ services:
     tty: true
     environment:
       MYSQL_DATABASE: laraveldb
-      MYSQL_USER: laravel
+      MYSQL_USER: laraveluser
       MYSQL_PASSWORD: laravelpassworddb
-      MYSQL_ROOT_PASSWORD: rootpasswordmysql
+      MYSQL_ROOT_PASSWORD: laravelpassworddb
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     ports:
@@ -52,14 +52,14 @@ services:
       context: ./service-config/docker
       dockerfile: Dockerfile
     container_name: app
-    environment: 
-      DB_HOST: mysql
-      DB_PORT: 4306
-      DB_DATABASE: test_database
-      DB_USERNAME: mysql_user
-      DB_PASSWORD: secret
+    # environment: 
+    #   DB_HOST: mysql
+    #   DB_PORT: 4306
+    #   DB_DATABASE: test_database
+    #   DB_USERNAME: mysql_user
+    #   DB_PASSWORD: secret
     ports:
-      - "1027:9000"
+      - "1027:8000"
     volumes:
       - ./:/var/www/html
       - ./service-config/php/php.ini:/usr/local/etc/php/conf.d/local.ini
